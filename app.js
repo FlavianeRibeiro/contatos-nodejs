@@ -41,15 +41,3 @@ load('models').then('controllers').then('routes').into(app);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
-
-var db = mongoose.connect;
-var KittySchema = mongoose.Schema({
-  nome: String
-});
-var user = mongoose.model(user, KittySchema);
-var user = new user({name: 'Nany'});
-console.log(user.nome);
-user.save(function(err, fluffy){
-  if(err) return console.log.error(err);
-  console.log('salvo com sucesso')
-})

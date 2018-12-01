@@ -25,6 +25,24 @@ module.exports = function(app){
                    console.log("usarios cadastro com sucesso....");
                }
             });
+        },
+        editar: function(req, res){
+            Usuario.findById(re.params.id, function(err,data){
+                if(err){
+                    console.log(err);
+                }else{
+                    res.render('usuairos/editar', {value:data})
+                }
+            });
+        },
+        show: function(req, res){
+            Usuario.findById(req.params.id, function(err, data){
+               if(err){
+                    console.log(err);
+                }else{
+                    res.render('usuairos/show', {value:data})
+                }
+            });
         }
     }
     return UsuariosController;

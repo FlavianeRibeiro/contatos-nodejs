@@ -3,6 +3,7 @@ module.exports = function(app){
     
     app.get('/usuarios', usuarios.index);
     app.get('/usuarios/create', usuarios.create);
-    app.get('/usuarios/create', usuarios.insert);
-    app.get('/usuarios/editar/:id', usuarios.update);
+    app.post('/usuarios/create', usuarios.insert);
+    app.put('/usuarios/editar/:id', usuarios.update);
+    app.get('/usuarios/show/:id', usuarios.show);
 };

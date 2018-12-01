@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1  Editar Usuário
+  br
+  br
+  form(method="POST", action="/usuarios/editar/#{valor._id}", role="form")
+    input(type="hidden" name="_method" value="put")
+    div(class="form-group")
+      label Name: 
+      input(type="text", name="login", class="form-control", value="#{valor.login}")
+    div(class="form-group")
+      label Senha: 
+      input(type="text", name="senha", class="form-control", value="#{valor.senha}")
+    input(type="text", name="submit", value="Atualizar", class="btn btn-primary")  
+    br
+    a(href="/", title="Inicial") Voltar
