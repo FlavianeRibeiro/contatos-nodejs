@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-  h1  Mini-Curso
+  h1  Usuários
   br
   br
   table(class="table well")
@@ -10,6 +10,7 @@ block content
         th ID:
         th Login
         th Senha
+        th Ação
     tbody
     
     each valor, i in lista
@@ -17,3 +18,11 @@ block content
         td #{valor._id}
         td #{valor.login}
         td #{valor.senha}
+        td 
+          a(href="/usuarios/editar/#{valor._id}", title="Editar", class="btn btn-infor")
+            span(class="glyphicon glyphicon-pencil")
+          &nbsp
+          a(href="/usuarios/show/#{valor._id}", title="Ver", class="btn btn-primary")
+            span(class="glyphicon glyphicon-search")
+    br
+    a(href="/", title="Inicial") Voltar

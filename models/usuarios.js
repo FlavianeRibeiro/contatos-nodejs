@@ -1,10 +1,10 @@
 
+
 module.exports = function(){
-	var mongoose = require('mongoose');
-	var Schema = mongoose.Schema();
-	var usuario = Schema({
-		nome     : {type: String, trim: true},
-		email    : {type: String, trim: true, unique: true, index: true},
+	var mongoose = require("mongoose");
+	var usuario = mongoose.Schema({
+		nome     : {type: String},
+		email    : {type: String},
 		senha : {type: String},
 		data_cad : {type: Date, default: Date.now}
 	});
