@@ -43,6 +43,15 @@ module.exports = function(app){
                     res.render('usuairos/show', {value:data})
                 }
             });
+        },
+        remove: function(req, res){
+            Usuario.remove({_id: req.params.id}, function(err){
+               if(err){
+                    console.log(err);
+                }else{
+                    res.redirect('usuairos')
+                }
+            });
         }
     }
     return UsuariosController;
